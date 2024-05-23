@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Digital Diary</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="loading-screen">
+    <h1>Loading</h1>
+    <div class="spinner"></div>
+  </div>
+  <div class="main-screen">
+    <div class="taskbar">
+      <div class="menu-icon">☰</div>
+      <h1 class="taskbar-title">My Digital Diary</h1>
+    </div>
+    <div class="content">
+      <!-- Saved documents will be listed here -->
+    </div>
+    <div class="add-button">+</div>
+  </div>
+  <div class="document-screen" style="display: none;">
+    <div class="taskbar">
+      <div class="menu-icon">☰</div>
+      <h1 class="taskbar-title">Editing Document</h1>
+    </div>
+    <input type="text" class="document-title" id="document-title" value="Untitled">
+    <div class="document-date" id="document-date"></div>
+    <div class="document-tags">
+    </div>
+    <div class="document-content" contenteditable="true">
+      <!-- Editable document content goes here -->
+    </div>
+    <div class="save-button">✔</div>
+  </div>
+  <div class="settings-screen" style="display: none;">
+    <div class="taskbar">
+      <div class="menu-icon">☰</div>
+      <h1 class="taskbar-title">Settings</h1>
+    </div>
+    <div class="settings-content">
+      <div class="setting-option">
+        <label for="font-selector">Font</label>
+        <select id="font-selector">
+          <option value="Arial">Arial</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Verdana">Verdana</option>
+        </select>
+      </div>
+      <div class="setting-option">
+        <label for="text-color">Text Color</label>
+        <input type="color" id="text-color">
+      </div>
+      <div class="setting-option">
+        <label for="background-color">Background Color</label>
+        <input type="color" id="background-color">
+      </div>
+    </div>
+  </div>
+  <div class="sidebar" style="display: none;">
+    <div class="sidebar-content">
+      <h2>Menu</h2>
+      <ul>
+        <li class="home-option">Home</li>
+        <li class="settings-option">Settings</li>
+      </ul>
+    </div>
+  </div>
+  <div class="security-screen" style="display: none;">
+    <div class="taskbar">
+      <div class="menu-icon">☰</div>
+      <h1 class="taskbar-title">Security</h1>
+    </div>
+    <div class="security-content">
+      <input type="password" id="password" placeholder="Enter Password">
+      <input type="password" id="confirm-password" placeholder="Confirm Password">
+      <input type="text" id="recovery-question" placeholder="Recovery Question">
+      <input type="text" id="recovery-answer" placeholder="Recovery Answer">
+      <button id="confirm-security">Confirm</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

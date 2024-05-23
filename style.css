@@ -1,0 +1,267 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #3CB371; /* Medium green background */
+  color: white;
+}
+
+h1 {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.main-screen, .bookmark-screen {
+  display: none; /* Hidden by default */
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Background color for main screen */
+  position: relative;
+}
+
+.taskbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3498db; /* Blue background color for taskbar */
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.taskbar-title {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+}
+
+.menu-icon {
+   font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.search-bar {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.add-button, .save-button {
+  width: 50px;
+  height: 50px;
+  background-color: blue; /* Blue background for the button */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+}
+
+.add-button {
+  bottom: 20px; /* Positioning 20px from the bottom */
+  right : 20px; /* Positioning 20px from the left */
+}
+
+.save-button {
+  bottom: 20px; /* Positioning 20px from the bottom */
+  right: 20px; /* Positioning 20px from the right */
+}
+
+.content {
+  padding: 20px;
+}
+
+.saved-document {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  position: relative;
+  cursor: pointer;
+}
+
+.saved-document-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.saved-document-date {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.document-screen {
+  display: none; /* Hidden by default */
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.document-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.document-date {
+  font-size: 18px;
+  color: white;
+}
+
+.document-title {
+  font-size: 24px;
+  border: none;
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  width: 100%;
+}
+
+.document-content {
+  width: 100%;
+  height: calc(100% - 60px); /* Adjust height according to taskbar */
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.options-menu {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.options-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.options-menu button:hover {
+  background-color: #f1f1f1;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #3498db;
+  color: white;
+  z-index: 2000;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.sidebar-content {
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover {
+  background-color: #2980b9;
+}
+
+.settings-screen {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.settings-content {
+  padding: 20px;
+}
+
+.setting-option {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .taskbar-title {
+    font-size: 18px;
+  }
+
+  .menu-icon {
+    font-size: 18px;
+  }
+
+  .add-button, .save-button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .document-title {
+    font-size: 18px;
+  }
+
+  .document-content {
+    font-size: 14px;
+  }
+}
+
